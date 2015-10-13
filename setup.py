@@ -2,14 +2,13 @@
 
 from setuptools import setup
 
-setup(name='cabot-alert-skeleton',
-      version='1.0.1',
-      description='An empty alert plugin for Cabot by Arachnys',
-      author='Arachnys',
-      author_email='info@arachnys.org',
+setup(name='cabot-alert-sms',
+      version='0.1',
+      description='An sms alert plugin for Cabot by Lyncir',
+      author='Lyncir',
+      author_email='lyncir@gmail.com',
       url='http://cabotapp.com',
       packages=[
-      	'cabot_alert_skeleton'
+      	'cabot_alert_sms'
       	],
-      download_url= 'https://github.com/cabot-alert-skeleton/cabot-alert-skeleton/tarball/1.0.1'
      )

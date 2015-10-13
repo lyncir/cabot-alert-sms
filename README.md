@@ -1,7 +1,18 @@
-Cabot Skeleton Plugin
+Cabot SMS Plugin
 =====
-This is an empty alert plugin for Cabot by arachnys. It contains a suitable layout for almost all possible Cabot alert plugins.
+This is an alert plugin for the cabot service monitoring tool. It allows you to alert users by sms.
 
 ### Usage
-In order to get started with writing an alert plugin. Please read the [plugin tutorial](http://cabotapp.com/dev/writing-alert-plugins.html). You can use this repo as a starting point for plugin development.
+1. Append cabot_alert_sms to the variable CABOT_PLUGINS_ENABLED in your conf/production.env
 
+2. Edit cabot/settings.py,add a line:
+    INSTALLED_APPS = (
+	    ...
+		'cabot_alert_sms',
+		...
+		)
+
+3. Add some SQL:
+	SELECT * FROM django_content_type WHERE app_label='cabot_alert_sms';
+	INSERT INTO cabotapp_alertplugin(polymorphic_ctype_id,title,enabled) VALUE(9,'SMS',1);
+	INSERT INTO cabot_alert_sms_smsalert(alertplugin_ptr_id) VALUE(5);
